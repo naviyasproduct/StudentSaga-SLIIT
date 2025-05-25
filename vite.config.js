@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/StudentSaga-SLIIT/',
+  base: './', // relative path
   build: {
     outDir: 'docs',
   },
