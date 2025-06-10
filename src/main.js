@@ -44,7 +44,7 @@ ground.receiveShadow = true;
 scene.add(ground);
 
 const loader = new GLTFLoader();
-loader.load("/models/map-f-hand-test2.glb", (gltf) => {
+loader.load("models/map-f-hand-test2.glb", (gltf) => {
   const model = gltf.scene;
   model.traverse((child) => {
     if (child.isMesh) {
@@ -62,7 +62,7 @@ const keysPressed = {};
 const moveSpeed = 0.5;
 
 function loadCharacter(type) {
-  const charPath = type === "boy" ? "/models/boy1.glb" : "/models/girl-w.glb";
+  const charPath = type === "boy" ? "models/boy1.glb" : "models/girl-w.glb";
   const charLoader = new GLTFLoader();
   charLoader.load(charPath, (gltf) => {
     if (player) scene.remove(player);
@@ -123,7 +123,7 @@ document.addEventListener("mousemove", (event) => {
 const arrowLoader = new GLTFLoader();
 let entranceArrow, exitArrow;
 
-arrowLoader.load('/models/direction_arrow.glb', (gltf) => {
+arrowLoader.load('models/direction_arrow.glb', (gltf) => {
   entranceArrow = gltf.scene.clone();
   entranceArrow.scale.set(1, 1, 1);
   entranceArrow.position.set(-125, 5, 100);
