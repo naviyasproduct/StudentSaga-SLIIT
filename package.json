@@ -10,5 +10,8 @@
   "devDependencies": {
     "three": "^0.164.1",
     "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.8.1"
   }
 }
