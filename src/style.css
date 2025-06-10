@@ -153,35 +153,26 @@ kbd {
 }
 #mobile-controls {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 15px;
+  bottom: 80px;
+  left: 20px;
+  display: none; /* default hidden */
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   z-index: 10000;
-  user-select: none;
-  touch-action: none;
 }
 
-.arrow-btn {
-  background: rgba(255, 255, 255, 0.7);
-  border: none;
+#mobile-controls .horizontal {
+  display: flex;
+  gap: 10px;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
   border-radius: 10px;
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  transition: background 0.3s;
-}
-
-.arrow-btn:active {
-  background: rgba(200, 200, 200, 0.9);
-}
-
-/* Hide these controls on desktop */
-@media (min-width: 768px) {
-  #mobile-controls {
-    display: none;
-  }
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }

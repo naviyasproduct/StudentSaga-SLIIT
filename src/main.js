@@ -3,6 +3,29 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 
 
+const pcNotice = document.getElementById("pc-notice");
+if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+  pcNotice.style.display = "none";
+}
+
+
+const mobileControls = document.getElementById("mobile-controls");
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+  mobileControls.style.display = "flex";
+}
+
+document.querySelectorAll("#mobile-controls .arrow").forEach(button => {
+  const key = button.dataset.key;
+
+  button.addEventListener("touchstart", () => {
+    keysPressed[key] = true;
+  });
+
+  button.addEventListener("touchend", () => {
+    keysPressed[key] = false;
+  });
+});
+
 
 
 const phoneIcon = document.getElementById("phone-icon");
