@@ -1,6 +1,10 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
+
+
+
+
 const phoneIcon = document.getElementById("phone-icon");
 const phoneUI = document.getElementById("phone-ui");
 
@@ -12,6 +16,38 @@ phoneIcon.addEventListener("click", () => {
     document.exitPointerLock();
   }
 });
+
+// Mobile arrow buttons control integration
+const mobileControls = {
+  "arrow-up": "arrowup",
+  "arrow-down": "arrowdown",
+  "arrow-left": "arrowleft",
+  "arrow-right": "arrowright"
+};
+
+Object.entries(mobileControls).forEach(([btnId, keyName]) => {
+  const btn = document.getElementById(btnId);
+
+  // Touch and mouse support (for both mobile and desktop testing)
+  const startHandler = (e) => {
+    e.preventDefault();
+    keysPressed[keyName] = true;
+  };
+
+  const endHandler = (e) => {
+    e.preventDefault();
+    keysPressed[keyName] = false;
+  };
+
+  btn.addEventListener("touchstart", startHandler);
+  btn.addEventListener("touchend", endHandler);
+  btn.addEventListener("touchcancel", endHandler);
+
+  btn.addEventListener("mousedown", startHandler);
+  btn.addEventListener("mouseup", endHandler);
+  btn.addEventListener("mouseleave", endHandler);
+});
+
 
 const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(0xcce0ff, 50, 500);
@@ -89,10 +125,14 @@ function loadCharacter(type) {
 window.addEventListener("load", () => loadCharacter("boy"));
 document.getElementById("select-boy").addEventListener("click", () => {
   document.getElementById("character-selection").style.display = "none";
+  document.getElementById("character-selection-logo").style.display = "none";
+  
 });
 document.getElementById("select-girl").addEventListener("click", () => {
   loadCharacter("girl");
   document.getElementById("character-selection").style.display = "none";
+  document.getElementById("character-selection-logo").style.display = "none";
+
 });
 
 window.addEventListener("keydown", (e) => { keysPressed[e.key.toLowerCase()] = true; });

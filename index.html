@@ -6,8 +6,21 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
+    <div class="pc-notice">
+      <p>
+        🔒 <strong>PC Users:</strong> Press <kbd>ESC</kbd> to lock/unlock the
+        cursor!
+      </p>
+    </div>
     <div id="character-selection" class="overlay">
       <div class="card">
+        <img
+          src="/images/StudetnSaga-logo-1.png"
+          alt="Your Logo"
+          class="logo"
+          id="character-selection-logo"
+        />
+
         <h2>
           WELCOME to Student Saga - SLIIT <br />
           Select Your Character
@@ -31,12 +44,24 @@
 
     <div id="phone-icon">📱</div>
     <div id="phone-ui">
-      <img src="./models/Smart Phone Flat Style.jpg" id="phone-bg" alt="Phone Background" />
+      <img
+        src="/images/Smart Phone Flat Style.jpg"
+        id="phone-bg"
+        alt="Phone Background"
+      />
       <div id="phone-apps">
         <button id="open-sagagpt">SagaGPT</button>
       </div>
     </div>
 
-    <script type="module" src="./src/main.js"></script>
+    <!-- Mobile controls container -->
+    <div id="mobile-controls">
+      <button id="arrow-up" class="arrow-btn">⬆️</button>
+      <button id="arrow-left" class="arrow-btn">⬅️</button>
+      <button id="arrow-down" class="arrow-btn">⬇️</button>
+      <button id="arrow-right" class="arrow-btn">➡️</button>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
