@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>StudentSaga-SLIIT</title>
-    <script type="module" crossorigin src="/StudentSaga-SLIIT/assets/index-B5FFvUf2.js"></script>
-    <link rel="stylesheet" crossorigin href="/StudentSaga-SLIIT/assets/index-DIDgxLHv.css">
+    <script type="module" crossorigin src="/StudentSaga-SLIIT/assets/index-EhblzI1l.js"></script>
+    <link rel="stylesheet" crossorigin href="/StudentSaga-SLIIT/assets/index-DV2j5DoO.css">
   </head>
   <body>
-    <div class="pc-notice">
+    <div class="pc-notice" id="pc-notice">
       <p>
         🔒 <strong>PC Users:</strong> Press <kbd>ESC</kbd> to lock/unlock the
         cursor!
@@ -55,13 +55,14 @@
       </div>
     </div>
 
-    <!-- Mobile controls container -->
-    <div id="mobile-controls">
-      <button id="arrow-up" class="arrow-btn">⬆️</button>
-      <button id="arrow-left" class="arrow-btn">⬅️</button>
-      <button id="arrow-down" class="arrow-btn">⬇️</button>
-      <button id="arrow-right" class="arrow-btn">➡️</button>
-    </div>
+  <div id="mobile-controls">
+  <button class="arrow up" data-key="arrowup">↑</button>
+  <div class="horizontal">
+    <button class="arrow left" data-key="arrowleft">←</button>
+    <button class="arrow right" data-key="arrowright">→</button>
+  </div>
+  <button class="arrow down" data-key="arrowdown">↓</button>
+</div>
 
   </body>
 </html>
